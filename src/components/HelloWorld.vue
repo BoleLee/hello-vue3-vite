@@ -14,7 +14,8 @@
   </p>
 </template>
 
-<script setup>
+<script lang="ts">
+import Vue from 'vue'
 import { defineProps, reactive } from 'vue'
 
 defineProps({
@@ -25,6 +26,10 @@ const state = reactive({
   count: 0,
   message: 'I\'m a reactive data'
 })
+
+export default {
+  name: 'HelloWorld'
+}
 </script>
 
 <style scoped>
