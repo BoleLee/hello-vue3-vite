@@ -5,12 +5,19 @@
 <script lang="ts">
 import { ref } from '@vue/reactivity'
 import { provide } from '@vue/runtime-core'
+import router from './router'
+
 export default {
   name: 'App',
   setup () {
     const width = document.documentElement.clientWidth
     const menuVisible = ref(width <= 550 ? false : true)
     provide('menuVisible', menuVisible)
+    router.afterEach(() => {
+      if (width <= 550) {
+        menuVisible.value = false
+      }
+    })
   }
 }
 </script>
