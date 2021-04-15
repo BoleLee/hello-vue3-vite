@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="layout">
   <Topnav></Topnav>
   <div class="content">
     <aside v-if="menuVisible">
@@ -47,17 +47,12 @@ export default {
 .layout {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   > .nav {
     flex-shrink: 0;
   }
   > .content {
     flex-grow: 1;
-    padding-top: 60px;
-    padding-left: 156px;
-    @media (max-width: 500px) {
-      padding-left: 0; 
-    }
   }
 }
 .content {
@@ -76,11 +71,6 @@ aside {
   background: #313640;
   width: 150px;
   padding: 16px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 70px;
-  height: 100%;
   > h2 {
     margin-bottom: 4px;
   }
@@ -88,6 +78,13 @@ aside {
     > li {
       padding: 4px 0;
     }
+  }
+  @media (max-width: 550px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 70px;
+    height: 100%;
   }
 }
 main {

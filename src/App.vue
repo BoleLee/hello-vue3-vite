@@ -8,7 +8,8 @@ import { provide } from '@vue/runtime-core'
 export default {
   name: 'App',
   setup () {
-    const menuVisible = ref(false)
+    const width = document.documentElement.clientWidth
+    const menuVisible = ref(width <= 550 ? false : true)
     provide('menuVisible', menuVisible)
   }
 }
