@@ -1,9 +1,6 @@
 <template>
 <div>
-  <div class="topnav">
-    <div class="logo">Grace UI</div>
-    <div class="menu"></div>
-  </div>
+  <Topnav></Topnav>
   <div class="banner">
     <h1>Grace UI</h1>
     <h2>一个基于Vue3的造轮子UI框架</h2>
@@ -16,9 +13,13 @@
 </template>
 
 <script lang="ts">
+import Topnav from '../components/Topnav.vue'
 
 export default {
   name: 'Home',
+  components: {
+    Topnav
+  },
   data () {
     return {
       

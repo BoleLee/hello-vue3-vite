@@ -1,9 +1,6 @@
 <template>
 <div>
-  <div class="topnav">
-    <div class="logo">Grace UI</div>
-    <div class="menu"></div>
-  </div>
+  <Topnav></Topnav>
   <div class="content">
     <aside></aside>
     <main></main>
@@ -12,9 +9,13 @@
 </template>
 
 <script lang="ts">
+import Topnav from '../components/Topnav.vue'
 
 export default {
   name: 'Doc',
+  components: {
+    Topnav
+  },
   data () {
     return {
       
