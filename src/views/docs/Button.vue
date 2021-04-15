@@ -1,13 +1,12 @@
 <template>
 <div>
-  Frank Page
+  Buttun文档
 </div>
 </template>
 
-<script lang="ts">
-
+<script>
 export default {
-  name: 'Frank',
+  name: 'Button',
   data () {
     return {
       
@@ -16,6 +15,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
   
 </style>
