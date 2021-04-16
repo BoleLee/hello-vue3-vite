@@ -14,19 +14,19 @@ const router = createRouter({
       children: [
         {
           path: 'switch',
-          component: () => import('../views/docs/Switch.vue')
+          component: () => import('../views/docs/SwitchDemo.vue')
         },
         {
           path: 'button',
-          component: () => import('../views/docs/Button.vue')
+          component: () => import('../views/docs/ButtonDemo.vue')
         },
         {
           path: 'dialog',
-          component: () => import('../views/docs/Dialog.vue')
+          component: () => import('../views/docs/DialogDemo.vue')
         },
         {
           path: 'tabs',
-          component: () => import('../views/docs/Tabs.vue')
+          component: () => import('../views/docs/TabsDemo.vue')
         }
       ]
     }

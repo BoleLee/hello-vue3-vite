@@ -1,13 +1,15 @@
 <template>
 <div>
-  Dialog文档
+  <button>
+    <slot />
+  </button>
 </div>
 </template>
 
 <script>
 export default {
-  name: 'Dialog',
-  data () {
+  name: 'Button',
+  data() {
     return {
       
     }

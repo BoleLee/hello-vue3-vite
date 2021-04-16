@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Switch',
+  name: 'SwitchDemo',
   data () {
     return {
       
