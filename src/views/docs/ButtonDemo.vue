@@ -1,8 +1,11 @@
 <template>
 <div>Button示例</div>
-<h1></h1>
+<h1>不同样式(props: theme)</h1>
 <div>
-  <Button>按钮组件</Button>
+  <Button>default组件</Button>
+  <Button theme="button">button组件</Button>
+  <Button theme="link">link组件</Button>
+  <Button theme="text">text组件</Button>
 </div>
 </template>
 
@@ -14,10 +17,8 @@ export default {
   components: {
     Button
   },
-  data () {
-    return {
-      
-    }
+  setup () {
+    
   }
 }
 </script>
