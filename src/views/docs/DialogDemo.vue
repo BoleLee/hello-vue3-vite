@@ -1,12 +1,12 @@
 <template>
 <div>
-  Buttun文档
+  Dialog文档
 </div>
 </template>
 
 <script>
 export default {
-  name: 'Button',
+  name: 'DialogDemo',
   data () {
     return {
       

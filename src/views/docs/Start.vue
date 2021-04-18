@@ -1,12 +1,12 @@
 <template>
 <div>
-  Dialog文档
+  文档首页
 </div>
 </template>
 
 <script>
 export default {
-  name: 'Dialog',
+  name: 'DocStart',
   data () {
     return {
       
