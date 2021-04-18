@@ -13,6 +13,10 @@ const router = createRouter({
       component: () => import('../views/Doc.vue'),
       children: [
         {
+          path: '',
+          component: () => import('../views/docs/Start.vue')
+        },
+        {
           path: 'switch',
           component: () => import('../views/docs/SwitchDemo.vue')
         },
