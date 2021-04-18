@@ -1,11 +1,14 @@
 <template>
 <button class="grace-button"
-  :class="`grace-theme-${theme}`">
+  :class="classes"
+  :disabled="disabled">
+  <span v-if="loading" class="grace-loadingIndicator"></span>
   <slot />
 </button>
 </template>
 
 <script>
+import { computed } from 'vue'
 export default {
   name: 'Button',
   props: {
@@ -16,10 +19,28 @@ export default {
     size: {
       type: String,
       default: 'normal'
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
   setup(props) {
+    const { theme, size, level } = props
+    const classes = computed(() => {
+      return {
+        [`grace-theme-${theme}`]: theme,
+        [`grace-size-${size}`]: size
+      }
+    })
 
+    return {
+      classes
+    }
   }
 }
 </script>
@@ -61,5 +82,81 @@ $grey: grey;
   &::-moz-focus-inner {
     border: 0;
   }
+  &.grace-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    background: none;
+    &:hover,
+    &:focus {
+      color: lighten($blue, 10%);
+    }
+  }
+  &.grace-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    background: none;
+  }
+  &.grace-theme-primary {
+    background: $blue;
+    color: white;
+    border-color: $blue;
+    &:hover,
+    &:focus {
+      background: darken($blue, 10%);
+      border-color: darken($blue, 10%);
+    }
+  }
+  &.grace-theme-danger {
+    background: $red;
+    border-color: $red;
+    color: white;
+    &:hover,
+    &:focus {
+      background: darken($red, 10%);
+      border-color: darken($red, 10%);
+    }
+  }
+  &.grace-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.grace-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
+  }
+  &.grace-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.grace-theme-link, &.gulu-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+    }
+  }
+  > .grace-loadingIndicator{
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px; 
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: grace-spin 1s infinite linear;
+  }
+}
+@keyframes grace-spin {
+  0%{transform: rotate(0deg)} 
+  100%{transform: rotate(360deg)} 
 }
 </style>
