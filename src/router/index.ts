@@ -33,6 +33,10 @@ const router = createRouter({
           component: () => import('../views/docs/TabsDemo.vue')
         }
       ]
+    },
+    {
+      path: '/demo',
+      component: () => import('../views/demos/index.vue')
     }
   ]
 })
